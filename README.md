@@ -5,7 +5,7 @@ A minimal PHP library for building tick-based background workers with signal han
 ## Requirements
 
 - PHP 8.3+
-- `ext-pcntl`
+- Extension: `ext-pcntl`
 
 ## Installation
 
@@ -102,10 +102,10 @@ protected function handleTickError(Throwable $e): void
 
 ## Running via CLI
 
-The package ships with `bin/run_worker.php`, which instantiates and runs any `Worker` subclass by its fully qualified class name. Constructor parameters are passed as `--name=value` flags.
+The package ships with `bin/run_worker`, which instantiates and runs any `Worker` subclass by its fully qualified class name. Constructor parameters are passed as `--name=value` flags.
 
 ```bash
-vendor/bin/run_worker.php "App\Workers\MyWorker"
+vendor/bin/run_worker "App\Workers\MyWorker"
 ```
 
 Required constructor parameters without defaults will cause the script to fail with a clear error if omitted.
